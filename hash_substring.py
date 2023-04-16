@@ -35,14 +35,14 @@ def get_occurrences(pattern, text):
     q =11
     bup=1
     rez = []
-    for i in range(pnln-1):
+    for i in range(pnlg-1):
         bup = (h*chs)%q
-    for i in range(pnln):
+    for i in range(pnlg):
         hashp=(hashp*chs+ord(text[i]))%q
         hasht=(hasht*chs+ord(text[i]))%q
-    for i in range(txln-pnln+1):
+    for i in range(txlg-pnlg+1):
         if hashp == hasht:
-            for j in range(pnln):
+            for j in range(pnlg):
                 if text[i+j] == pattern[j]:
                     rez.append(i)
                 else:
