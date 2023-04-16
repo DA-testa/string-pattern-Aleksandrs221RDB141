@@ -31,8 +31,8 @@ def get_occurrences(pattern, text):
     txlg = len(text)
     hasht=0
     hashp=0
-    chs = 13
-    q =256
+    chs = 56
+    q =11
     bup=1
     rez = []
     for i in range(pnlg-1):
