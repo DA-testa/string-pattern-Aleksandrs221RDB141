@@ -53,7 +53,7 @@ def get_occurrences(pattern, text):
                 hasht=hasht+q
 
     # and return an iterable variable
-    return arr
+    return rez
 
 
 # this part launches the functions
