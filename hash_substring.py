@@ -5,7 +5,7 @@ def read_input():
     # as before, use capital i (input from keyboard) and capital f (input from file) to choose which input type will follow
     text = input()
     if "F" in text :
-        with open(f"test/06") as f:
+        with open("./tests/06") as f:
             patt = f.readline()
             text = f.readline()
     elif "I" in text:
@@ -19,7 +19,7 @@ def read_input():
     # return both lines in one return
     
     # this is the sample return, notice the rstrip function
-    return (patt.rstrip(), patt.rstrip())
+    return (patt.rstrip(), text.rstrip())
 
 def print_occurrences(output):
     # this function should control output, it doesn't need any return
@@ -31,7 +31,7 @@ def get_occurrences(pattern, text):
     txlg = len(text)
     hasht=0
     hashp=0
-    chs = 56
+    chs = 256
     q =11
     bup=1
     rez = []
@@ -43,15 +43,14 @@ def get_occurrences(pattern, text):
     for i in range(txlg-pnlg+1):
         if hashp == hasht:
             for j in range(pnlg):
-                if text[i+j] == pattern[j]:
-                    rez.append(i)
-                else:
+                if text[i+j] != pattern[j]:
                     break
+            else:
+                rez.append(i)
         if i < txlg-pnlg:
-            hasht = (chs *(hasht - ord (text[i])*bup)+ord (text[i+pnlg])) % q
+            hasht = (chs *(hasht - ord (text[i])*bup)+ord (text[pnlg+i])) % q
             if hasht < 0:
-                hasht=hasht+q
-
+                hasht = hasht+q
     # and return an iterable variable
     return rez
 
