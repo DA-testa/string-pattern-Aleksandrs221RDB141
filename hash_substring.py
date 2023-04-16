@@ -50,7 +50,7 @@ def get_occurrences(pattern, text):
         if i < txlg-pnlg:
             hasht = (chs *(hasht - ord (text[i])*bup)+ord (text[i+pnlg])) % q
             if hasht < 0:
-                t=t+q
+                hasht=hasht+q
 
     # and return an iterable variable
     return arr
