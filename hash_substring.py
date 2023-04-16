@@ -36,7 +36,7 @@ def get_occurrences(pattern, text):
     bup=1
     rez = []
     for i in range(pnlg-1):
-        bup = (h*chs)%q
+        bup = (bup*chs)%q
     for i in range(pnlg):
         hashp=(hashp*chs+ord(text[i]))%q
         hasht=(hasht*chs+ord(text[i]))%q
