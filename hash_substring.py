@@ -31,14 +31,14 @@ def get_occurrences(pattern, text):
     txlg = len(text)
     hasht=0
     hashp=0
-    chs = 256
-    q =11
+    chs = 13
+    q =256
     bup=1
     rez = []
     for i in range(pnlg-1):
         bup = (bup*chs)%q
     for i in range(pnlg):
-        hashp=(hashp*chs+ord(text[i]))%q
+        hashp=(hashp*chs+ord(pattern[i]))%q
         hasht=(hasht*chs+ord(text[i]))%q
     for i in range(txlg-pnlg+1):
         if hashp == hasht:
